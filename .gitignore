@@ -1,0 +1,13 @@
+# Local environment configuration (may contain credentials)
+config/database.php
+pemesanan/config.php
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+vendor/

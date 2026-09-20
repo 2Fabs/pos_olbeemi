@@ -1,0 +1,355 @@
+/* =========================================
+   INVENTORY MODULE STYLES
+   bahan + stok + riwayat
+========================================= */
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.inventory-toolbar,
+.filter-toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 252, 248, 0.62);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.inventory-toolbar input,
+.inventory-toolbar select,
+.filter-toolbar input,
+.filter-toolbar select {
+    min-width: 220px;
+}
+
+.inventory-toolbar input {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* =========================
+   STOCK INFO
+========================= */
+
+.stock-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stock-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.stock-unit {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* =========================
+   STOCK BADGES
+========================= */
+
+.stock-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.stock-safe {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.stock-warning {
+    background: rgba(255, 193, 7, 0.14);
+    color: #9a6b00;
+}
+
+.stock-danger {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+/* =========================
+   INVENTORY ACTIONS
+========================= */
+
+.inventory-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.inventory-actions .btn-edit,
+.inventory-actions .btn-stock,
+.inventory-actions .btn-delete {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 88px;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.inventory-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.inventory-summary-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 16px 18px;
+}
+
+.inventory-summary-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary), rgba(138, 90, 59, 0.22));
+}
+
+.inventory-summary-card h3 {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.inventory-summary-card strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* =========================
+   TABLE TWEAKS
+========================= */
+
+.inventory-table td {
+    vertical-align: middle;
+}
+
+.inventory-name {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.inventory-subtext {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.qty-cell {
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* =========================
+   HISTORY FILTER
+========================= */
+
+.history-filter-card {
+    padding: 14px;
+    margin-bottom: 18px;
+}
+
+.history-filter-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.history-filter-form input[type="date"],
+.history-filter-form select {
+    min-width: 180px;
+}
+
+.history-filter-form button {
+    flex-shrink: 0;
+}
+
+/* =========================
+   MOVEMENT BADGES
+========================= */
+
+.movement-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.movement-in {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.movement-out {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+/* =========================
+   MODAL STOCK
+========================= */
+
+.stock-modal-content {
+    max-width: 520px;
+}
+
+.stock-modal-content form > .btn-primary:last-child {
+    width: 100%;
+}
+
+.stock-form-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.stock-form-row .form-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+.stock-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.inventory-empty {
+    padding: 42px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    border: 1px dashed rgba(138, 90, 59, 0.22);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.34);
+}
+
+/* =========================
+   DETAIL INFO CARD
+========================= */
+
+.inventory-detail-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.inventory-detail-card h2 {
+    margin-bottom: 8px;
+}
+
+.inventory-detail-card p {
+    margin-bottom: 6px;
+}
+
+/* =========================
+   QUICK ACTION PANEL
+========================= */
+
+.quick-action-panel {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.quick-action-panel .btn-primary,
+.quick-action-panel .btn-stock,
+.quick-action-panel .btn-edit {
+    min-width: 160px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+    .inventory-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .inventory-toolbar,
+    .filter-toolbar,
+    .history-filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .inventory-toolbar input,
+    .inventory-toolbar select,
+    .filter-toolbar input,
+    .filter-toolbar select,
+    .history-filter-form input,
+    .history-filter-form select {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .inventory-actions {
+        flex-direction: column;
+    }
+
+    .quick-action-panel {
+        flex-direction: column;
+    }
+
+    .quick-action-panel .btn-primary,
+    .quick-action-panel .btn-stock,
+    .quick-action-panel .btn-edit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .inventory-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-form-row {
+        flex-direction: column;
+    }
+
+    .inventory-actions .btn-edit,
+    .inventory-actions .btn-stock,
+    .inventory-actions .btn-delete {
+        width: 100%;
+    }
+}

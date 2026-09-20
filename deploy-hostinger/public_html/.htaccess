@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Domain utama menampilkan halaman login dari aplikasi.
+RewriteRule ^$ pos_olbeemi/login.php [L]
+
+# Gunakan trailing slash agar URL relatif di halaman pemesanan tetap benar.
+RewriteRule ^pemesanan$ /pemesanan/ [R=302,L]
+
+# Buka index pemesanan secara eksplisit agar tidak bergantung pada DirectoryIndex server.
+RewriteRule ^pemesanan/$ pos_olbeemi/pemesanan/index.php [L,QSA]
+
+# Hindari rewrite berulang untuk URL folder aplikasi yang lama.
+RewriteRule ^pos_olbeemi(?:/|$) - [L]
+
+# Teruskan semua URL publik, aset, dan proses form ke folder aplikasi.
+RewriteRule ^(.+)$ pos_olbeemi/$1 [L,QSA]

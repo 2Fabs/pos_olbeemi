@@ -1,0 +1,9 @@
+DirectoryIndex index.php login.php
+
+RewriteEngine On
+
+# Serve the login page when the app root is opened
+RewriteRule ^$ login.php [L]
+
+# Allow /pemesanan to resolve cleanly to the ordering app
+RewriteRule ^pemesanan/?$ pemesanan/index.php [L]
